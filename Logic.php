@@ -3,13 +3,14 @@
     ini_set('display_errors', 1);
 
     // Set connection parameters
-    $host       = "localhost:5432";
+    $host       = "localhost";
+    $port       = "5432"; 
     $dbname     = "postgres";
     $user       = "postgres";
     $password   = "postgres";
     $table      = "test";
 
-    $dbconn = pg_connect("host=$host dbname=$dbname user=$user password=$password")
+    $dbconn = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$password")
         or die('Could not connect: ' . pg_last_error());
 
     $query = "SELECT * FROM test";
