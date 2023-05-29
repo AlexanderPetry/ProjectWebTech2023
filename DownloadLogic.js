@@ -10,9 +10,9 @@ console.log(data_raw);
 for (let i = 0; i < data_raw.lenght; i++) {
   ;
 }
-var data = JSON.parse(jsonString);
+var data = JSON.parse(data_raw);
 
-console.log(data_raw);
+console.log(data);
 
 // give data preview
 
