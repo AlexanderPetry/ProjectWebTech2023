@@ -31,16 +31,13 @@ function handleDownloadButtonClick() {
 	var url = URL.createObjectURL(blob);
 
 	// Create a link element
-	var link = document.createElement('a');
+	var downloadButton = document.getElementById('downloadButton');
 
 	// Set the href attribute to the URL
-	link.href = url;
+	downloadButton.href = url;
 
 	// Set the download attribute with the desired file name
-	link.download = 'data.txt';
-
-	// Simulate a click on the link to initiate the download
-	link.click();
+	downloadButton.download = 'data.txt';
 
 	// Clean up the URL object
 	URL.revokeObjectURL(url);
