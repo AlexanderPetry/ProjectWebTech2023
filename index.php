@@ -72,15 +72,13 @@
 
     <div id="content3" style="display: none;">
         <h2>Content 3</h2>
-         <button id="downloadButton">Download</button>
+        <p id="downloadButton">Download</p>
         <p id="preview"> data preview </p>
 
-        <script>
+        <script  src="DownloadLogic.js">
             var dataFromPHP = <?php echo $encodedData; ?>;
         </script>
 
-
-        <script src="DownloadLogic.js"></script>
 
 
     </div>

@@ -9,10 +9,10 @@ console.log(data_raw);
 // format data into variable
 
 data_formatted = "";
-data_formatted = data_formatted + data_raw[0].number + ";";
-data_formatted = data_formatted + data_raw[0].bool + ";\n";
-data_formatted = data_formatted + data_raw[1].number + ";";
-data_formatted = data_formatted + data_raw[1].bool + ";\n";
+data_formatted = data_formatted + data_raw[0].number 	+ ";";
+data_formatted = data_formatted + data_raw[0].bool 		+ ";";
+data_formatted = data_formatted + data_raw[1].number 	+ ";";
+data_formatted = data_formatted + data_raw[1].bool 		+ ";";
 
 // give data preview
 
