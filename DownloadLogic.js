@@ -4,14 +4,16 @@ var filename = "data.txt"
 
 // get data
 
-console.log(data_raw[0]);
+console.log(data_raw);
 
 // format data into variable
 
-for (let i = 0; i < 1 ;i++) {
-  data_formatted = data_formatted + data_raw[i].number + ";";
-  data_formatted = data_formatted + data_raw[i].bool + ";\n";
-}
+data_formatted = "";
+data_formatted = data_formatted + data_raw[0].number + ";";
+data_formatted = data_formatted + data_raw[0].bool + ";\n";
+data_formatted = data_formatted + data_raw[1].number + ";";
+data_formatted = data_formatted + data_raw[1].bool + ";\n";
+
 // give data preview
 
 var previewElement = document.getElementById("preview");
