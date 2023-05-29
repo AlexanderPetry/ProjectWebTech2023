@@ -8,7 +8,7 @@ console.log(data_raw[0]);
 
 // format data into variable
 
-for (let i = 0; i < 1 i++) {
+for (let i = 0; i < 1 ;i++) {
   data_formatted = data_raw[i].number + ";";
   data_formatted = data_raw[i].bool + ";\n";
 }
