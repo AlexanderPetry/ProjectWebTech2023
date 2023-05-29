@@ -25,5 +25,5 @@
     }
     echo "</table>";
 
-    $encodedData = $data;
+    $encodedData = json_encode($data);
 ?>
