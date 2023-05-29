@@ -78,7 +78,8 @@
 
         <script src="DownloadLogic.js"></script>
 
-        
+        <p id="preview"> data preview </p>
+
     </div>
 </body>
 </html>

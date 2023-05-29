@@ -1,11 +1,14 @@
-var fs = require('fs');
 var data_raw = dataFromPHP;
 var data_formatted;
 var filename = "data.txt"
 
 // get data
-	console.log(data_raw);
+console.log(data_raw);
 // format data into variable
+
+// give data preview
+
+document.getElementById("preview").innerHTML = "Hello JavaScript!";
 
 // write data to file
 
