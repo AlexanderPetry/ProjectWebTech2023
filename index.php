@@ -66,7 +66,7 @@
 
     <div id="content2" style="display: none;">
         <h2>Database</h2>
-        <?php include 'logic.php'; ?>
+        <?php include 'Logic.php'; ?>
 
     </div>
 
