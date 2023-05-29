@@ -5,10 +5,10 @@
 2. Open Powershell
 3. Connect
 ```
-ssh remote_username@remote_host
+ssh root@server-of-team9.pxl.bjth.xyz
 ```
 
-## Install Apache web server
+## Install Caddy web server
 1. Connect via SSH
 2. update package manager
 ```
@@ -16,15 +16,15 @@ sudo dnf update
 ```
 3. install Apache web server
 ```
-sudo dnf install httpd 
+sudo dnf install caddy
 ```
 4. to start server
 ```
-sudo systemctl start httpd.service
+sudo systemctl start caddy
 ```
 5. to check the status of the server
 ```
-sudo systemctl status httpd.service 
+sudo systemctl status caddy 
 ```
 
 ## Install PHP on the webserver
@@ -34,9 +34,6 @@ sudo dnf install php
 ```
 2. restart Apache service
 ```
-sudo systemctl restart httpd.service
+sudo systemctl restart caddy
 ```
 
-## Extra recources
-- [PHP](https://www.w3schools.com/php/default.asp)
-- [PHP/PostgeSQL](https://www.php.net/manual/en/book.pgsql.php)
