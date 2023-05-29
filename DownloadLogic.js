@@ -4,13 +4,13 @@ var filename = "data.txt"
 
 // get data
 
-console.log(data_raw);
+console.log(data_raw[0]);
 
 // format data into variable
 for (let i = 0; i < data_raw.lenght; i++) {
   ;
 }
-var data = JSON.parse(data_raw);
+var data = JSON.parse(data_raw[0]);
 
 console.log(data);
 
