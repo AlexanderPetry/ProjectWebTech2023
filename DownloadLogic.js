@@ -3,21 +3,35 @@ var data_formatted;
 var filename = "data.txt"
 
 // get data
+
 console.log(data_raw);
+
 // format data into variable
+
+data_formatted = data_raw;
 
 // give data preview
 
 var previewElement = document.getElementById("preview");
-previewElement.innerHTML = data_raw;
+previewElement.innerHTML = data_formatted;
 
-// write data to file
+// Create a Blob object with the server-side data
+var blob = new Blob([data_formatted], { type: 'text/plain' });
 
-fs.writeFile(filename, data_formatted, function (err) {
-  if (err) throw err;
-  console.log('Succesfully written');
-});
+// Create a URL for the blob object
+var url = URL.createObjectURL(blob);
 
-// allow file to be downloaded
+// Create a link element
+var link = document.createElement('a');
 
-// cleanup
+// Set the href attribute to the URL
+link.href = url;
+
+// Set the download attribute with the desired file name
+link.download = 'data.txt';
+
+// Simulate a click on the link to initiate the download
+link.click();
+
+// Clean up the URL object
+URL.revokeObjectURL(url);
