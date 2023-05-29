@@ -73,7 +73,7 @@
     <div id="content3" style="display: none;">
         <h2>Content 3</h2>
         <script>
-            var dataFromPHP = <?php echo json_encode($data); ?>;
+            var dataFromPHP = <?php echo $data; ?>;
         </script>
 
         <button id="downloadButton">Download</button>
