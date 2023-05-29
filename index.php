@@ -75,6 +75,8 @@
         <script>
             var dataFromPHP = <?php echo json_encode($data); ?>;
         </script>
+
+        <button id="downloadButton">Download</button>
         <p id="preview"> data preview </p>
         <script src="DownloadLogic.js"></script>
 
