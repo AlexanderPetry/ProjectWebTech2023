@@ -1,29 +1,74 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>About</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-    }
-h1 {
-  color: #333;
-  font-size: 24px;
-}
+    <title>Project Webtech 2023</title>
+    <script>
+        function changeContent(contentId) {
+            var content = document.getElementById(contentId).innerHTML;
+            document.getElementById('dynamicContent').innerHTML = content;
+        }
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-p {
-  color: #555;
-  font-size: 16px;
-  line-height: 1.5;
-}
-  </style>
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #f2f2f2;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 10px;
+            color: #333;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #dynamicContent {
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-  <h1>About Our Project</h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor tellus non felis auctor eleifend. Duis ut sem ante. Nullam rutrum, metus id interdum eleifend, massa ex volutpat ante, eu varius nunc sapien sed dolor. Cras dignissim enim vel sollicitudin volutpat. Duis ut malesuada nisl, id tincidunt nisi. Curabitur maximus leo sed dapibus rutrum. Sed rutrum nibh a risus efficitur venenatis. Mauris non massa id lectus finibus mollis. Sed eu massa ac elit vestibulum euismod. Praesent finibus suscipit tortor, vitae ullamcorper ex bibendum sed. Nullam varius odio ex, id interdum tellus ullamcorper id. Sed hendrerit enim magna, vel placerat elit sagittis at.</p>
-  <p>Curabitur eu purus et metus bibendum sollicitudin. Sed malesuada velit vitae tortor malesuada, ac ultricies enim volutpat. In a ligula at sapien fringilla malesuada at vel ex. Morbi hendrerit fringilla turpis, nec pharetra est varius nec. Donec ut enim risus. Nullam accumsan dui sed facilisis pellentesque. Suspendisse potenti. Sed non enim efficitur, volutpat justo et, dictum est. Aenean id interdum justo. Donec vestibulum enim eget ultrices mattis. Sed id lacus eu leo hendrerit lacinia vel id nisi. Phasellus congue hendrerit ante, at posuere est lacinia eget. Vestibulum laoreet risus vitae urna sagittis, vitae interdum lorem semper.</p>
-  <p>Proin non dolor nec erat fermentum iaculis. Maecenas condimentum odio sit amet faucibus lacinia. Mauris semper elit vitae turpis ultrices fringilla. Donec vel orci eu lectus iaculis gravida. Integer scelerisque lorem lectus, at lacinia nisl dignissim sed. Nullam bibendum ante ac risus malesuada, at auctor orci suscipit. Sed sed eros vel nunc elementum cursus. Fusce tempus feugiat nulla, sed tincidunt sem commodo nec. Sed porttitor leo sit amet tortor laoreet, sed rhoncus urna auctor. Donec auctor, tortor nec facilisis cursus, lorem metus luctus est, id gravida nibh risus eget libero.</p>
+    <header>
+        <h1>Dynamic Header Example</h1>
+    </header>
+    <nav>
+        <a onclick="changeContent('content1')">About</a>
+        <a onclick="changeContent('content2')">Data</a>
+        <a onclick="changeContent('content3')">Download</a>
+    </nav>
+    <div id="dynamicContent">
+        <p>Select an option from the navigation menu.</p>
+    </div>
+
+    <div id="content1" style="display: none;">
+        <h2>About</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</p>
+        <p>Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.</p>
+    </div>
+
+    <div id="content2" style="display: none;">
+        <h2>Content 2</h2>
+        <p>This is the content of section 2.</p>
+    </div>
+
+    <div id="content3" style="display: none;">
+        <h2>Content 3</h2>
+        <p>This is the content of section 3.</p>
+    </div>
 </body>
 </html>
