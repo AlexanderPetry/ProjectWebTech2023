@@ -13,7 +13,7 @@ console.log(data_raw);
 // give data preview
 
 var previewElement = document.getElementById("preview");
-previewElement.innerHTML = data;
+previewElement.innerHTML = data_raw;
 
 // Create a function to handle the button click event
 
