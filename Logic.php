@@ -1,23 +1,26 @@
 <?php
-          // Set connection parameters
-          $host       = "localhost:5432";
-          $dbname     = "postgres";
-          $user       = "postgres";
-          $password   = "postgres";
-          $table      = "test";
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
 
-          $dbconn = pg_connect("host=$host dbname=$dbname user=$user password=$password")
-              or die('Could not connect: ' . pg_last_error());
+    // Set connection parameters
+    $host       = "localhost:5432";
+    $dbname     = "postgres";
+    $user       = "postgres";
+    $password   = "postgres";
+    $table      = "test";
 
-          $query = "SELECT * FROM test";
-          $result = pg_query($query) or die('Query failed: ' . pg_last_error());
+    $dbconn = pg_connect("host=$host dbname=$dbname user=$user password=$password")
+        or die('Could not connect: ' . pg_last_error());
 
-          $data = pg_fetch_all($result);
+    $query = "SELECT * FROM test";
+    $result = pg_query($query) or die('Query failed: ' . pg_last_error());
 
-          echo "<table>";
-          echo "<tr><th>number</th><th>bool</th></tr>";
-          foreach ($data as $row) {
-              echo "<tr><td>".$row['number']."</td><td>".$row['bool']."</td></tr>";
-          }
-          echo "</table>";
+    $data = pg_fetch_all($result);
+
+    echo "<table>";
+    echo "<tr><th>number</th><th>bool</th></tr>";
+    foreach ($data as $row) {
+        echo "<tr><td>".$row['number']."</td><td>".$row['bool']."</td></tr>";
+    }
+    echo "</table>";
 ?>
