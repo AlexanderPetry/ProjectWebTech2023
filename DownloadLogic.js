@@ -8,7 +8,8 @@ console.log(data_raw);
 
 // give data preview
 
-document.getElementById("preview").innerHTML = "Hello JavaScript!";
+var previewElement = document.getElementById("preview");
+previewElement.innerHTML = data_raw;
 
 // write data to file
 
