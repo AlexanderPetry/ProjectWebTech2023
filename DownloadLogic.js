@@ -7,8 +7,12 @@ var filename = "data.txt"
 console.log(data_raw);
 
 // format data into variable
+for (let i = 0; i < data_raw.lenght; i++) {
+  ;
+}
+var data = JSON.parse(jsonString);
 
-data_formatted = data_raw[0];
+console.log(data_raw);
 
 // give data preview
 
