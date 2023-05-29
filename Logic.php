@@ -14,7 +14,7 @@
         or die('Could not connect: ' . pg_last_error());
 
     $query = "SELECT * FROM test";
-    $result = pg_query($query) or die('Query failed: ' . pg_last_error());
+    $result = pg_query_params($dbconn, $query, array()) or die('Query failed: ' . pg_last_error());
 
     $data = pg_fetch_all($result);
 
