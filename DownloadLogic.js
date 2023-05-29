@@ -8,38 +8,40 @@ console.log(data_raw[0]);
 
 // format data into variable
 
-console.log(data_raw);
-
+for (let i = 0; i < 1 i++) {
+  data_formatted = data_raw[i].number + ";";
+  data_formatted = data_raw[i].bool + ";\n";
+}
 // give data preview
 
 var previewElement = document.getElementById("preview");
-previewElement.innerHTML = data_raw[0].number;
+previewElement.innerHTML = data_formatted;
 
 // Create a function to handle the button click event
 
 function handleDownloadButtonClick() {
 	console.log("button test");
 
-	  // Create a Blob object with the server-side data
-	  var blob = new Blob([serverData], { type: 'text/plain' });
+	// Create a Blob object with the server-side data
+	var blob = new Blob([data_formatted], { type: 'text/plain' });
 
-	  // Create a URL for the blob object
-	  var url = URL.createObjectURL(blob);
+	// Create a URL for the blob object
+	var url = URL.createObjectURL(blob);
 
-	  // Create a link element
-	  var link = document.createElement('a');
+	// Create a link element
+	var link = document.createElement('a');
 
-	  // Set the href attribute to the URL
-	  link.href = url;
+	// Set the href attribute to the URL
+	link.href = url;
 
-	  // Set the download attribute with the desired file name
-	  link.download = 'data.txt';
+	// Set the download attribute with the desired file name
+	link.download = 'data.txt';
 
-	  // Simulate a click on the link to initiate the download
-	  link.click();
+	// Simulate a click on the link to initiate the download
+	link.click();
 
-	  // Clean up the URL object
-	  URL.revokeObjectURL(url);
+	// Clean up the URL object
+	URL.revokeObjectURL(url);
 }
 
 // Get the button element
