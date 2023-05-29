@@ -17,31 +17,33 @@ console.log(data);
 // give data preview
 
 var previewElement = document.getElementById("preview");
-previewElement.innerHTML = data_formatted;
+previewElement.innerHTML = data;
 
 // Create a function to handle the button click event
 
 function handleDownloadButtonClick() {
-  // Create a Blob object with the server-side data
-  var blob = new Blob([serverData], { type: 'text/plain' });
+	console.log("button test");
 
-  // Create a URL for the blob object
-  var url = URL.createObjectURL(blob);
+	  // Create a Blob object with the server-side data
+	  var blob = new Blob([serverData], { type: 'text/plain' });
 
-  // Create a link element
-  var link = document.createElement('a');
+	  // Create a URL for the blob object
+	  var url = URL.createObjectURL(blob);
 
-  // Set the href attribute to the URL
-  link.href = url;
+	  // Create a link element
+	  var link = document.createElement('a');
 
-  // Set the download attribute with the desired file name
-  link.download = 'data.txt';
+	  // Set the href attribute to the URL
+	  link.href = url;
 
-  // Simulate a click on the link to initiate the download
-  link.click();
+	  // Set the download attribute with the desired file name
+	  link.download = 'data.txt';
 
-  // Clean up the URL object
-  URL.revokeObjectURL(url);
+	  // Simulate a click on the link to initiate the download
+	  link.click();
+
+	  // Clean up the URL object
+	  URL.revokeObjectURL(url);
 }
 
 // Get the button element
