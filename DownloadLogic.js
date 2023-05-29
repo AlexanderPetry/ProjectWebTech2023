@@ -13,7 +13,7 @@ console.log(data_raw);
 // give data preview
 
 var previewElement = document.getElementById("preview");
-previewElement.innerHTML = JSON.parse(data_raw)[0];
+previewElement.innerHTML = data_raw[0].number;
 
 // Create a function to handle the button click event
 
