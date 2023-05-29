@@ -72,7 +72,13 @@
 
     <div id="content3" style="display: none;">
         <h2>Content 3</h2>
-        <p>This is the content of section 3.</p>
+        <script>
+            var dataFromPHP = <?php echo json_encode($data); ?>;
+        </script>
+
+        <script src="DownloadLogic.js"></script>
+
+        
     </div>
 </body>
 </html>
