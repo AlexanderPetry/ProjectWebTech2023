@@ -1,0 +1,32 @@
+body {
+    background-color: black;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: black;
+    color: #34eb46;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    background-color: black;
+    color: #34eb46;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    margin: 0 10px;
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#dynamicContent {
+    padding: 20px;
+    text-align: center;
+}
