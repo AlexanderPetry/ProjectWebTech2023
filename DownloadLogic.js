@@ -1,50 +1,27 @@
-var data_raw = dataFromPHP;
-var data_formatted;
-var filename = "data.txt"
+function downloadData() {
+    // Generate the data to be downloaded
+    var data = "This is the data to be downloaded.";
 
-// get data
+    // Create a Blob object from the data
+    var blob = new Blob([data], { type: "text/plain" });
 
-console.log(data_raw);
+    // Create a temporary URL for the Blob object
+    var url = URL.createObjectURL(blob);
 
-// format data into variable
+    // Create a temporary <a> element to initiate the download
+    var link = document.createElement("a");
+    link.href = url;
+    link.download = "data.txt"; // Set the desired file name
 
-data_formatted = "";
-data_formatted = data_formatted + data_raw[0].number 	+ ";";
-data_formatted = data_formatted + data_raw[0].bool 		+ ";";
-data_formatted = data_formatted + data_raw[1].number 	+ ";";
-data_formatted = data_formatted + data_raw[1].bool 		+ ";";
+    // Append the <a> element to the document body
+    document.body.appendChild(link);
 
-// give data preview
+    // Trigger the download
+    link.click();
 
-var previewElement = document.getElementById("preview");
-previewElement.innerHTML = data_formatted;
+    // Clean up - remove the temporary <a> element
+    document.body.removeChild(link);
 
-// Create a function to handle the button click event
-
-function handleDownloadButtonClick() {
-	console.log("button test");
-
-	// Create a Blob object with the server-side data
-	var blob = new Blob([data_formatted], { type: 'text/plain' });
-
-	// Create a URL for the blob object
-	var url = URL.createObjectURL(blob);
-
-	// Create a link element
-	var downloadButton = document.getElementById('downloadButton');
-
-	// Set the href attribute to the URL
-	downloadButton.href = url;
-
-	// Set the download attribute with the desired file name
-	downloadButton.download = 'data.txt';
-
-	// Clean up the URL object
-	URL.revokeObjectURL(url);
+    // Release the object URL
+    URL.revokeObjectURL(url);
 }
-
-// Get the button element
-var downloadButton = document.getElementById('downloadButton');
-
-// Add an event listener to the button
-downloadButton.addEventListener('click', handleDownloadButtonClick);
