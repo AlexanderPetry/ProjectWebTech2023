@@ -1,27 +1,21 @@
 body {
     background-color: black;
-    font-family: Arial, sans-serif;
+    color: #34eb46; /* Neon green text color */
+    font-family: "Courier New", monospace;
     margin: 0;
     padding: 0;
 }
 
-header {
+header, nav {
     background-color: black;
-    color: #34eb46;
     padding: 20px;
     text-align: center;
-}
-
-nav {
-    background-color: black;
-    color: #34eb46;
-    padding: 10px;
-    text-align: center;
+    color: #34eb46; /* Neon green text color */
 }
 
 nav a {
     margin: 0 10px;
-    color: #333;
+    color: #34eb46;
     text-decoration: none;
     cursor: pointer;
 }
@@ -29,4 +23,15 @@ nav a {
 #dynamicContent {
     padding: 20px;
     text-align: center;
+}
+
+#content1, #content2, #content3 {
+    background-color: black;
+    color: #34eb46; /* Neon green text color */
+    padding: 20px;
+    display: none;
+}
+
+#preview {
+    color: #34eb46; /* Neon green text color */
 }
