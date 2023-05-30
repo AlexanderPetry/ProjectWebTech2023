@@ -132,7 +132,7 @@
     <div>
       <p id="anim">1</p>
       <script>
-        setInterval(move, 5000);
+        setInterval(move, 10);
         var i = box.style.top;
         function Move() {
           var elem = document.getElementById('anim');
