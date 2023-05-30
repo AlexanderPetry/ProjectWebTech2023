@@ -86,11 +86,11 @@
 
           //
           data = encodedData[0] + ";";
-          data = data encodedData[1] + ";";
+          data = data + encodedData[1] + ";";
 
 
 
-          //download datasdsdseafefaefadssssssddddeee
+          //download data
           function downloadData() {
               // Create a Blob object from the data
               var blob = new Blob([data], { type: "text/plain" });
