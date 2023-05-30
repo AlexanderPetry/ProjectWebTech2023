@@ -72,6 +72,16 @@
 
     <div id="content3" style="display: none;">
         <h1>Download Button</h1>
+
+        <select id="Dropdown" onchange="handleChange()">
+          <option value=".csv">CSV</option>
+          <option value=".json">JSON</option>
+          <option value=".xml">XML</option>
+          <option value=".txt">RAW/TXT</option>
+        </select>
+        <p>Selected value: <span id="displayValue"></span></p>
+
+
         <button onclick="downloadData()">Download Data</button>
         <p id="preview"> data preview </p>
         <script >
@@ -81,13 +91,45 @@
 
           // set variables
           var data = " ";
-          var filetype = ".csv"
+          var filetype =  document.getElementById("Dropdown").value;
           var filename = "DownloadFile"
 
-          //
-          for(let i=0; i < encodedData.length; i++){
-              data = data + encodedData[i].number + ";";
-              data = data + encodedData[i].bool + ";\n";
+          // function for creating .xml file
+          function jsonToXml(json) {
+            var xml = '';
+            for (var prop in json) {
+              if (json.hasOwnProperty(prop)) {
+                xml += "<" + prop + ">";
+                if (typeof json[prop] === 'object') {
+                  xml += jsonToXml(json[prop]);
+                } else {
+                  xml += json[prop];
+                }
+                xml += "</" + prop + ">";
+              }
+            }
+            return xml;
+          }
+
+
+          //data converions
+          if(filetype == ".csv"){
+            for(let i=0; i < encodedData.length; i++){
+                data = data + encodedData[i].number + ";";
+                data = data + encodedData[i].bool + ";\n";
+            }
+          }
+          else if(filetype == ".json"){
+            data = JSON.stringify(encodedData);
+          }
+          else if(filetype == ".xml"){
+            data = jsonToXml(encodedData);
+          }
+          else if(filetype == ".txt"){
+            data = JSON.stringify(encodedData);
+          }
+          else{
+            data = JSON.stringify(encodedData);
           }
 
           //preview data
