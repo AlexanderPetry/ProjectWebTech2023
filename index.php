@@ -75,17 +75,17 @@
         <button onclick="downloadData()">Download Data</button>
         <p id="preview"> data preview </p>
         <script >
-                    // get data
+          // get data
           var encodedData = <?php echo $encodedData; ?>;
           console.log(encodedData);
 
           // set variables
-          var data = "";
+          var data = " ";
           var filetype = ".csv"
           var filename = "DownloadFile"
 
           //
-          for(let i=0; i < encodedData.lenght; i++){
+          for(let i=0; i < encodedData.length; i++){
               data = data + encodedData[i].number + ";";
               data = data + encodedData[i].bool + ";\n";
           }
