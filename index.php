@@ -72,8 +72,37 @@
 
     <div id="content3" style="display: none;">
         <h1>Download Database</h1>
-        <form action="download.php" method="post">
+        <form id="downloadForm" action="download.php" method="post">
             <button type="submit" name="download">Download Database</button>
+            <script>
+              document.getElementById("downloadForm").addEventListener("submit", function(event) {
+                event.preventDefault(); // Prevent form submission
+
+                // Make an asynchronous request to download.php using Fetch API
+                fetch(this.action, {
+                  method: this.method,
+                  headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                  }
+                })
+                .then(response => response.blob()) // Get the response as a Blob
+                .then(blob => {
+                  // Create a temporary URL for the Blob object
+                  const url = URL.createObjectURL(blob);
+
+                  // Create a temporary <a> element to initiate the download
+                  const a = document.createElement("a");
+                  a.href = url;
+                  a.download = "database.csv"; // Set the desired file name
+                  a.click(); // Trigger the download
+                  URL.revokeObjectURL(url); // Release the object URL
+                })
+                .catch(error => {
+                  console.error(error);
+                });
+              });
+            </script>
+
         </form>
 
     </div>
