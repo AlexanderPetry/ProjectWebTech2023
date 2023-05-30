@@ -24,4 +24,6 @@
         echo "<tr><td style='border: 1px solid black; padding: 5px; text-align: center;'>".$row['number']."</td><td style='border: 1px solid black; padding: 5px; text-align: center;'>".$row['bool']."</td></tr>";
     }
     echo "</table>";
+
+    $encodedData = json_encode($data);
 ?>
