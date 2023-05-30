@@ -81,11 +81,13 @@
 
           // set variables
           var data = "";
-          var filetype = ".txt"
+          var filetype = ".csv"
           var filename = "DownloadFile"
 
           //
-          data = encodedData;
+          data = encodedData[0] + ";";
+          data = data encodedData[1] + ";";
+
 
 
           //download datasdsdseafefaefadssssssddddeee
