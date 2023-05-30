@@ -129,22 +129,29 @@
         </script>
 
     </div>
-     <!-- Matrix rain effect -->
-<div class="matrix-rain">
-  <div class="matrix-row">
-    <span class="matrix-character"></span>
-    <span class="matrix-character"></span>
-    <span class="matrix-character"></span>
-    <span class="matrix-character"></span>
-    <span class="matrix-character"></span>
-    <span class="matrix-character"></span>
-    <span class="matrix-character"></span>
-    <span class="matrix-character"></span>
-    <span class="matrix-character"></span>
-    <span class="matrix-character"></span>
+    <div>
+      <p id="anim">1</p>
+      <script>
+        function Move() {
+          let id = null;
+          const elem = document.getElementById("anim");
+          let pos = 0;
+          clearInterval(id);
+          id = setInterval(frame, 5);
+          function frame() {
+            if (pos == 350) {
+              clearInterval(id);
+            } else {
+              pos++;
+              elem.style.top = pos + 'px';
+              elem.style.left = pos + 'px';
+            }
+          }
+        }
+        Move();
+      </script>
 
-  </div>
-</div>
+    </div>
    
 </body>
 </html>
