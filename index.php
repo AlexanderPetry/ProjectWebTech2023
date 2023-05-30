@@ -85,8 +85,6 @@
 
             function handleChange() {
                 var dropdown = document.getElementById("Dropdown");
-                var displayValue = document.getElementById("displayValue");
-                displayValue.textContent = dropdown.value;
 
                 // Update the filetype variable
                 filetype = dropdown.value;
