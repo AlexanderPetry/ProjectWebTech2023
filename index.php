@@ -132,23 +132,20 @@
     <div>
       <p id="anim">1</p>
       <script>
+        setInterval(move, 5000);
+        var i = box.style.top;
         function Move() {
-          let id = null;
-          const elem = document.getElementById("anim");
-          let pos = 0;
-          clearInterval(id);
-          id = setInterval(frame, 5);
-          function frame() {
-            if (pos == 350) {
-              clearInterval(id);
-            } else {
-              pos++;
-              elem.style.top = pos + 'px';
-              elem.style.left = pos + 'px';
-            }
+          var elem = document.getElementById('anim');
+          if(box.style.top == '500px'){
+            box.style.top == '0x';
+            i = 0;
+          }
+          else{
+            i++;
+            box.style.top = i + "px";
           }
         }
-        Move();
+
       </script>
 
     </div>
