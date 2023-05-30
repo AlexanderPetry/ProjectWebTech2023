@@ -2,38 +2,7 @@
 <html>
 <head>
     <title>Project Webtech 2023</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-
-        nav {
-            background-color: #f2f2f2;
-            padding: 10px;
-            text-align: center;
-        }
-
-        nav a {
-            margin: 0 10px;
-            color: #333;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        #dynamicContent {
-            padding: 20px;
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="design.css">
 </head>
 <body>
     <header>
