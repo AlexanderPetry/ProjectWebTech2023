@@ -7,6 +7,12 @@
             var content = document.getElementById(contentId).innerHTML;
             document.getElementById('dynamicContent').innerHTML = content;
         }
+
+        function handleChange() {
+            var dropdown = document.getElementById("Dropdown");
+            var displayValue = document.getElementById("displayValue");
+            displayValue.textContent = dropdown.value;
+        }
     </script>
     <style>
         body {
