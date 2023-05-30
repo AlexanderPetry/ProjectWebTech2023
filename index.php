@@ -129,7 +129,7 @@
         </script>
 
     </div>
-        <!-- Matrix rain effect -->
+     <!-- Matrix rain effect -->
     <div class="matrix-rain"></div>
 
     <script>
@@ -138,11 +138,11 @@
             var characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
             var matrixRain = document.querySelector('.matrix-rain');
 
-            for (var i = 0; i < 100; i++) {
+            for (var i = 0; i < 60; i++) {
                 var matrixRow = document.createElement('div');
                 matrixRow.className = 'matrix-row';
 
-                for (var j = 0; j < 60; j++) {
+                for (var j = 0; j < 40; j++) {
                     var matrixCharacter = document.createElement('span');
                     matrixCharacter.className = 'matrix-character';
                     matrixCharacter.innerText = characters[Math.floor(Math.random() * characters.length)];

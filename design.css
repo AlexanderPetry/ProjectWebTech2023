@@ -10,14 +10,14 @@ body {
 header {
     background-color: #1c1c1c; /* Dark gray background color */
     padding: 20px;
-    text-align: left; /* Align header content to the left */
+    text-align: center;
     color: #34eb46; /* Neon green text color */
 }
 
 nav {
     background-color: black;
     padding: 20px;
-    text-align: left; /* Align navigation items to the left */
+    text-align: center;
     color: #34eb46; /* Neon green text color */
 }
 
@@ -30,17 +30,14 @@ nav a {
 
 #dynamicContent {
     padding: 20px;
-    text-align: left; /* Align dynamic content to the left */
+    text-align: center;
 }
 
-#content1,
-#content2,
-#content3 {
+#content1, #content2, #content3 {
     background-color: black;
     color: #34eb46; /* Neon green text color */
     padding: 20px;
     display: none;
-    text-align: left; /* Align content to the left */
 }
 
 #Dropdown {
