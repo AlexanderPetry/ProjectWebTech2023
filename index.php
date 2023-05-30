@@ -132,5 +132,14 @@
         </script>
 
     </div>
+
+    <div class="matrix-rain">
+    <div class="matrix-row">
+        <span class="matrix-character">1</span>
+        <span class="matrix-character">0</span>
+        <!-- Repeat the matrix characters as needed -->
+    </div>
+    <!-- Repeat the matrix rows as needed -->
+</div>
 </body>
 </html>
