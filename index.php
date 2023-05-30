@@ -85,8 +85,10 @@
           var filename = "DownloadFile"
 
           //
-          data = encodedData[0] + ";";
-          data = data + encodedData[1] + ";";
+          data = encodedData[0].number + ";";
+          data = data + encodedData[0].bool + ";\n";
+          data = data + encodedData[1].number + ";";
+          data = data + encodedData[1].bool + ";\n";
 
 
 
