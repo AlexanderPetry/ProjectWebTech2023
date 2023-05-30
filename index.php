@@ -6,7 +6,7 @@
 </head>
 <body>
     <header>
-        <h1>Dynamic Header Example</h1>
+        <h1>Project Webtech 2023</h1>
     </header>
     <nav>
         <a onclick="changeContent('content1')">About</a>
@@ -129,22 +129,33 @@
         </script>
 
     </div>
+        <!-- Matrix rain effect -->
+    <div class="matrix-rain"></div>
 
-    <div class="matrix-rain">
-      <div class="matrix-row">
-        <span class="matrix-character">1</span>
-        <span class="matrix-character">0</span>
-        <span class="matrix-character">1</span>
-        <span class="matrix-character">0</span>
-        <!-- Repeat the matrix characters as needed -->
-    </div>
-        <span class="matrix-character">1</span>
-        <span class="matrix-character">0</span>
-        <span class="matrix-character">1</span>
-        <span class="matrix-character">0</span>
-        <span class="matrix-character">1</span>
-        <span class="matrix-character">0</span>
-    <!-- Repeat the matrix rows as needed -->
-</div>
+    <script>
+        // Generate matrix characters
+        function generateMatrixCharacters() {
+            var characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            var matrixRain = document.querySelector('.matrix-rain');
+
+            for (var i = 0; i < 100; i++) {
+                var matrixRow = document.createElement('div');
+                matrixRow.className = 'matrix-row';
+
+                for (var j = 0; j < 60; j++) {
+                    var matrixCharacter = document.createElement('span');
+                    matrixCharacter.className = 'matrix-character';
+                    matrixCharacter.innerText = characters[Math.floor(Math.random() * characters.length)];
+                    matrixRow.appendChild(matrixCharacter);
+                }
+
+                matrixRain.appendChild(matrixRow);
+            }
+        }
+
+        // Call the function to generate matrix characters
+        generateMatrixCharacters();
+    </script>
+   
 </body>
 </html>
