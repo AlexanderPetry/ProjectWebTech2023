@@ -2,18 +2,6 @@
 <html>
 <head>
     <title>Project Webtech 2023</title>
-    <script>
-        function changeContent(contentId) {
-            var content = document.getElementById(contentId).innerHTML;
-            document.getElementById('dynamicContent').innerHTML = content;
-        }
-
-        function handleChange() {
-            var dropdown = document.getElementById("Dropdown");
-            var displayValue = document.getElementById("displayValue");
-            displayValue.textContent = dropdown.value;
-        }
-    </script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -85,89 +73,95 @@
           <option value=".xml">XML</option>
           <option value=".txt">RAW/TXT</option>
         </select>
-        <p>Selected value: <span id="displayValue"></span></p>
 
 
         <button onclick="downloadData()">Download Data</button>
         <p id="preview"> data preview </p>
-        <script >
-          // get data
-          var encodedData = <?php echo $encodedData; ?>;
-          console.log(encodedData);
+        <script>
+            function changeContent(contentId) {
+                var content = document.getElementById(contentId).innerHTML;
+                document.getElementById('dynamicContent').innerHTML = content;
+            }
 
-          // set variables
-          var data = " ";
-          var filetype =  document.getElementById("Dropdown").value;
-          var filename = "DownloadFile"
+            function handleChange() {
+                var dropdown = document.getElementById("Dropdown");
+                var displayValue = document.getElementById("displayValue");
+                displayValue.textContent = dropdown.value;
 
-          // function for creating .xml file
-          function jsonToXml(json) {
-            var xml = '';
-            for (var prop in json) {
-              if (json.hasOwnProperty(prop)) {
-                xml += "<" + prop + ">";
-                if (typeof json[prop] === 'object') {
-                  xml += jsonToXml(json[prop]);
-                } else {
-                  xml += json[prop];
+                // Update the filetype variable
+                filetype = dropdown.value;
+            }
+
+            // Define your PHP encoded data
+            var encodedData = <?php echo $encodedData; ?>;
+            console.log(encodedData);
+
+            // Set variables
+            var data = " ";
+            var filetype = document.getElementById("Dropdown").value;
+            var filename = "DownloadFile";
+
+            // Function for creating .xml file
+            function jsonToXml(json) {
+                var xml = '';
+                for (var prop in json) {
+                    if (json.hasOwnProperty(prop)) {
+                        xml += "<" + prop + ">";
+                        if (typeof json[prop] === 'object') {
+                            xml += jsonToXml(json[prop]);
+                        } else {
+                            xml += json[prop];
+                        }
+                        xml += "</" + prop + ">";
+                    }
                 }
-                xml += "</" + prop + ">";
-              }
+                return xml;
             }
-            return xml;
-          }
 
-
-          //data converions
-          if(filetype == ".csv"){
-            for(let i=0; i < encodedData.length; i++){
-                data = data + encodedData[i].number + ";";
-                data = data + encodedData[i].bool + ";\n";
+            // Data conversions
+            if (filetype == ".csv") {
+                for (let i = 0; i < encodedData.length; i++) {
+                    data = data + encodedData[i].number + ";";
+                    data = data + encodedData[i].bool + ";\n";
+                }
+            } else if (filetype == ".json") {
+                data = JSON.stringify(encodedData);
+            } else if (filetype == ".xml") {
+                data = jsonToXml(encodedData);
+            } else if (filetype == ".txt") {
+                data = JSON.stringify(encodedData);
+            } else {
+                data = JSON.stringify(encodedData);
             }
-          }
-          else if(filetype == ".json"){
-            data = JSON.stringify(encodedData);
-          }
-          else if(filetype == ".xml"){
-            data = jsonToXml(encodedData);
-          }
-          else if(filetype == ".txt"){
-            data = JSON.stringify(encodedData);
-          }
-          else{
-            data = JSON.stringify(encodedData);
-          }
 
-          //preview data
-          document.getElementById("preview").textContent = data;
+            // Preview data
+            document.getElementById("preview").textContent = data;
 
+            // Download data
+            function downloadData() {
+                // Create a Blob object from the data
+                var blob = new Blob([data], { type: "text/plain" });
 
-          //download data
-          function downloadData() {
-              // Create a Blob object from the data
-              var blob = new Blob([data], { type: "text/plain" });
+                // Create a temporary URL for the Blob object
+                var url = URL.createObjectURL(blob);
 
-              // Create a temporary URL for the Blob object
-              var url = URL.createObjectURL(blob);
+                // Create a temporary <a> element to initiate the download
+                var link = document.createElement("a");
+                link.href = url;
+                link.download = filename + filetype; // Set the desired file name
 
-              // Create a temporary <a> element to initiate the download
-              var link = document.createElement("a");
-              link.href = url;
-              link.download = filename + filetype; // Set the desired file name
+                // Append the <a> element to the document body
+                document.body.appendChild(link);
 
-              // Append the <a> element to the document body
-              document.body.appendChild(link);
+                // Trigger the download
+                link.click();
 
-              // Trigger the download
-              link.click();
+                // Clean up - remove the temporary <a> element
+                document.body.removeChild(link);
 
-              // Clean up - remove the temporary <a> element
-              document.body.removeChild(link);
-
-              // Release the object URL
-              URL.revokeObjectURL(url);
-          }
-
+                // Release the object URL
+                URL.revokeObjectURL(url);
+            }
         </script>
 
     </div>
