@@ -19,9 +19,6 @@
 
     <div id="content1" style="display: none;">
         <h2>About</h2>
-        <?php
-        echo "PHP test";
-        ?>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</p>
         <p>Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.</p>
@@ -134,11 +131,19 @@
     </div>
 
     <div class="matrix-rain">
-    <div class="matrix-row">
+      <div class="matrix-row">
+        <span class="matrix-character">1</span>
+        <span class="matrix-character">0</span>
         <span class="matrix-character">1</span>
         <span class="matrix-character">0</span>
         <!-- Repeat the matrix characters as needed -->
     </div>
+        <span class="matrix-character">1</span>
+        <span class="matrix-character">0</span>
+        <span class="matrix-character">1</span>
+        <span class="matrix-character">0</span>
+        <span class="matrix-character">1</span>
+        <span class="matrix-character">0</span>
     <!-- Repeat the matrix rows as needed -->
 </div>
 </body>

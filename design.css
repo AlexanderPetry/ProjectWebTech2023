@@ -7,7 +7,14 @@ body {
     overflow: hidden;
 }
 
-header, nav {
+header {
+    background-color: #1c1c1c; /* Dark gray background color */
+    padding: 20px;
+    text-align: center;
+    color: #34eb46; /* Neon green text color */
+}
+
+nav {
     background-color: black;
     padding: 20px;
     text-align: center;
