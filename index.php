@@ -85,7 +85,7 @@
           var filename = "DownloadFile"
 
           //
-          for(int i=0; i < encodedData.lenght; i++){
+          for(let i=0; i < encodedData.lenght; i++){
               data = data + encodedData[i].number + ";";
               data = data + encodedData[i].bool + ";\n";
           }
