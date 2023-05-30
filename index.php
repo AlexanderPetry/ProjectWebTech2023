@@ -130,32 +130,21 @@
 
     </div>
      <!-- Matrix rain effect -->
-    <div class="matrix-rain"></div>
+<div class="matrix-rain">
+  <div class="matrix-row">
+    <span class="matrix-character"></span>
+    <span class="matrix-character"></span>
+    <span class="matrix-character"></span>
+    <span class="matrix-character"></span>
+    <span class="matrix-character"></span>
+    <span class="matrix-character"></span>
+    <span class="matrix-character"></span>
+    <span class="matrix-character"></span>
+    <span class="matrix-character"></span>
+    <span class="matrix-character"></span>
 
-    <script>
-        // Generate matrix characters
-        function generateMatrixCharacters() {
-            var characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            var matrixRain = document.querySelector('.matrix-rain');
-
-            for (var i = 0; i < 60; i++) {
-                var matrixRow = document.createElement('div');
-                matrixRow.className = 'matrix-row';
-
-                for (var j = 0; j < 40; j++) {
-                    var matrixCharacter = document.createElement('span');
-                    matrixCharacter.className = 'matrix-character';
-                    matrixCharacter.innerText = characters[Math.floor(Math.random() * characters.length)];
-                    matrixRow.appendChild(matrixCharacter);
-                }
-
-                matrixRain.appendChild(matrixRow);
-            }
-        }
-
-        // Call the function to generate matrix characters
-        generateMatrixCharacters();
-    </script>
+  </div>
+</div>
    
 </body>
 </html>

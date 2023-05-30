@@ -107,3 +107,51 @@ button:hover {
   white-space: nowrap;
   opacity: 0.6;
 }
+
+.matrix-row .matrix-character:nth-child(1) {
+  top: 0;
+  left: 0;
+}
+
+.matrix-row .matrix-character:nth-child(2) {
+  top: 0;
+  left: 10px;
+}
+
+.matrix-row .matrix-character:nth-child(3) {
+  top: 0;
+  left: 20px;
+}
+.matrix-row .matrix-character:nth-child(4) {
+  top: 0;
+  left: 30;
+}
+
+.matrix-row .matrix-character:nth-child(5) {
+  top: 0;
+  left: 40px;
+}
+
+.matrix-row .matrix-character:nth-child(6) {
+  top: 0;
+  left: 50px;
+}
+.matrix-row .matrix-character:nth-child(7) {
+  top: 0;
+  left: 60;
+}
+
+.matrix-row .matrix-character:nth-child(8) {
+  top: 0;
+  left: 70px;
+}
+
+.matrix-row .matrix-character:nth-child(9) {
+  top: 0;
+  left: 80px;
+}
+
+.matrix-row .matrix-character:nth-child(10) {
+  top: 0;
+  left: 90px;
+}
