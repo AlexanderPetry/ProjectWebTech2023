@@ -73,7 +73,7 @@
     <div id="content3" style="display: none;">
         <h1>Download Button</h1>
         <button onclick="downloadData()">Download Data</button>
-
+        <p id="preview"> data preview </p>
         <script >
                     // get data
           var encodedData = <?php echo $encodedData; ?>;
@@ -90,6 +90,8 @@
               data = data + encodedData[i].bool + ";\n";
           }
 
+          //preview data
+          document.getElementById("preview").textContent = data;
 
 
           //download data
