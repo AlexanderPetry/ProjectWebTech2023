@@ -27,3 +27,9 @@
 
     $encodedData = json_encode($data);
 ?>
+
+<script>
+    setTimeout(function() {
+        location.reload();
+    }, 30000); // Refresh the page every 1 minute (60,000 milliseconds)
+</script>
