@@ -3,31 +3,31 @@ $body = file_get_contents("php://input");
 $data = json_decode($body, true);
 
 if ($data) {
-    // Database connection settings
-    $host = 'your_host';
-    $dbname = 'your_database';
-    $user = 'your_username';
-    $password = 'your_password';
+    // Set connection parameters
+    $host       = "localhost";
+    $port       = "5432"; 
+    $dbname     = "postgres";
+    $user       = "postgres";
+    $password   = "postgres";
+    $table      = "temperature";
 
-    // Connect to the PostgreSQL database
-    $connection = pg_connect("host=$host dbname=$dbname user=$user password=$password");
 
-    if (!$connection) {
-        echo "Database connection failed.";
-        exit;
-    }
+    $dbconn = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$password")
+        or die('Could not connect: ' . pg_last_error());
+
+    // Get current timestamp
+    $time = date('Y-m-d H:i:s')
 
     // Prepare and execute the SQL statement to insert the data
     $insertQuery = "INSERT INTO your_table (time, temperature) VALUES ";
-    $values = [];
 
     foreach ($data as $item) {
-        $time = $item['time'];
         $temperature = $item['temperature'];
-        $values[] = "('$time', '$temperature')";
+        $insertQuery .= "('$time', '$temperature'), ";
     }
 
-    $insertQuery .= implode(", ", $values);
+    // Remove trailing comma and space
+    $insertQuery = rtrim($insertQuery, ', ');
 
     $result = pg_query($connection, $insertQuery);
 
