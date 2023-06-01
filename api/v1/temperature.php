@@ -1,17 +1,9 @@
 <?php
 $body = file_get_contents("php://input");
 
-echo $body;
-echo "\n";
-
 $data = json_decode($body, true);
+$data = (string) $data['temperature'];
 
-echo $data;
-echo "\n";
-
-$temperature = (string) $data['temperature'];
-echo $temperature;
-echo "\n";
 
 if ($data) {
     // Set connection parameters
