@@ -91,8 +91,8 @@
             // Data conversions
             if (filetype == ".csv") {
                 for (let i = 0; i < encodedData.length; i++) {
-                    data = data + encodedData[i].number + ";";
-                    data = data + encodedData[i].bool + ";\n";
+                    data = data + encodedData[i].time + ";";
+                    data = data + encodedData[i].temperature + ";\n";
                 }
             } else if (filetype == ".json") {
                 data = JSON.stringify(encodedData);
