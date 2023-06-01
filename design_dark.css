@@ -74,7 +74,7 @@ table th, table td {
   text-align: left;
 }
 
-..table-container {
+.table-container {
     max-height: 300px; /* Adjust the height as needed */
     overflow-y: auto;
     display: inline-flex;
@@ -107,22 +107,6 @@ table th, table td {
     color: #34eb46; /* Neon green text color */
 }
 
-.scrollable-box::-webkit-scrollbar {
-    width: 8px;
-    background-color: #1c1c1c;
-}
-
-.scrollable-box::-webkit-scrollbar-thumb {
-    background-color: #34eb46; /* Neon green scrollbar thumb color */
-}
-
-.scrollable-box::-webkit-scrollbar-track {
-    background-color: #1c1c1c;
-}
-
-.scrollable-box::-webkit-scrollbar-thumb:hover {
-    background-color: #2bc83b; /* Darker neon green on hover */
-}
 
 .section {
   max-width: 600px;
