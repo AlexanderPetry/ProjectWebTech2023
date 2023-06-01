@@ -63,8 +63,15 @@ button:hover {
   background-color: #2bc83b; /* Darker neon green on hover */
 }
 
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
 table th, table td {
-  border-color: #34eb46; /* Replace with your desired border color */
+  border: 1px solid #34eb46; /* Neon green border */
+  padding: 8px;
+  text-align: left;
 }
 
 .table-container {
@@ -88,34 +95,34 @@ table th, table td {
 }
 
 .section {
-        max-width: 600px;
-        margin: 0 auto;
-        padding: 20px;
-        background-color: #1c1c1c;
-        border-radius: 5px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        text-align: center;
-        margin-bottom: 20px;
-    }
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #1c1c1c;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 20px;
+}
 
-    .section-title {
-        font-size: 24px;
-        margin-bottom: 10px;
-    }
+.section-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
 
-    .section-description {
-        font-size: 16px;
-        line-height: 1.6;
-        margin-bottom: 20px;
-    }
+.section-description {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
 
-    ul {
-        list-style-type: none;
-        padding-left: 0;
-        margin-bottom: 20px;
-        text-align: left;
-    }
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 20px;
+  text-align: left;
+}
 
-    ul li {
-        margin-bottom: 10px;
-    }
+ul li {
+  margin-bottom: 10px;
+}

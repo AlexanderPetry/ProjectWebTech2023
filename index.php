@@ -78,7 +78,7 @@
         </select>
 
         <button onclick="downloadData()">Download Data</button>
-        <p id="preview"> data preview </p>
+        <p id="preview"><pre><code>data preview</code></pre></p>
         <script>
             function changeContent(contentId) {
                 var content = document.getElementById(contentId).innerHTML;
