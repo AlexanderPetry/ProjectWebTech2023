@@ -29,7 +29,7 @@ if ($data) {
     echo "\n";
 
     // Prepare and execute the SQL statement to insert the data
-    $insertQuery = "INSERT INTO $table (time, temperature) VALUES ";
+    $insertQuery = "INSERT INTO $table ($time, $temperature) VALUES ";
 
     echo "insert query: ";
     echo $insertQuery;
