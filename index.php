@@ -2,42 +2,17 @@
 <html>
 <head>
     <title>Project Webtech 2023</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-
-        nav {
-            background-color: #f2f2f2;
-            padding: 10px;
-            text-align: center;
-        }
-
-        nav a {
-            margin: 0 10px;
-            color: #333;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        #dynamicContent {
-            padding: 20px;
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="design.css">
+    <script>
+    function changeContent(contentId) {
+        var content = document.getElementById(contentId).innerHTML;
+        document.getElementById('dynamicContent').innerHTML = content;
+    }
+</script>
 </head>
 <body>
     <header>
-        <h1>Dynamic Header Example</h1>
+        <h1>Project Webtech 2023</h1>
     </header>
     <nav>
         <a onclick="changeContent('content1')">About</a>
@@ -50,9 +25,6 @@
 
     <div id="content1" style="display: none;">
         <h2>About</h2>
-        <?php
-        echo "PHP test";
-        ?>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</p>
         <p>Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.</p>
@@ -163,5 +135,6 @@
         </script>
 
     </div>
+   
 </body>
 </html>
