@@ -4,10 +4,11 @@ from datetime import datetime, timedelta
 # Database connection details
 host = 'localhost'
 port = '5432'
-dbname = 'your_database_name'
-user = 'your_username'
-password = 'your_password'
-table = 'your_table_name'
+dbname = 'postgres'
+user = 'postgres'
+password = 'postgres'
+table = 'Temperature'
+
 row_limit = 1000  # Define the row limit for the table
 delete_batch_size = 100  # Number of rows to delete in each batch
 
