@@ -4,6 +4,10 @@ $body = file_get_contents("php://input");
 $data = json_decode($body, true);
 $data = (string) $data['temperature'];
 
+echo "Temperature: ";
+echo $data;
+echo "\n";
+
 
 if ($data) {
     // Set connection parameters
@@ -19,6 +23,10 @@ if ($data) {
 
     // Get current timestamp
     $time = date('Y-m-d H:i:s');
+
+    echo "Time: ";
+    echo $time;
+    echo "\n";
 
     // Prepare and execute the SQL statement to insert the data
     $insertQuery = "INSERT INTO $table (time, temperature) VALUES ";
