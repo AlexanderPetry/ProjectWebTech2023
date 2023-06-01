@@ -9,7 +9,7 @@ if ($data) {
     $dbname     = "postgres";
     $user       = "postgres";
     $password   = "postgres";
-    $table      = "temperature";
+    $table      = "Temperature";
 
     $dbconn = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$password")
         or die('Could not connect: ' . pg_last_error());
