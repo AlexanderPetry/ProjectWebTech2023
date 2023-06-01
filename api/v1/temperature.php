@@ -30,7 +30,7 @@ if ($data) {
 
     foreach ($data as $item) {
         $temperature = $item['temperature'];
-        $insertQuery = "INSERT INTO $table (time, temperature) VALUES ";
+        $insertQuery = "INSERT INTO $table ($time, $temperature) VALUES ";
     }
 
     echo "insert query: ";
