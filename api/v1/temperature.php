@@ -11,15 +11,14 @@ if ($data) {
     $password   = "postgres";
     $table      = "temperature";
 
-
     $dbconn = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$password")
         or die('Could not connect: ' . pg_last_error());
 
     // Get current timestamp
-    $time = date('Y-m-d H:i:s')
+    $time = date('Y-m-d H:i:s');
 
     // Prepare and execute the SQL statement to insert the data
-    $insertQuery = "INSERT INTO your_table (time, temperature) VALUES ";
+    $insertQuery = "INSERT INTO $table (time, temperature) VALUES ";
 
     foreach ($data as $item) {
         $temperature = $item['temperature'];
@@ -29,7 +28,7 @@ if ($data) {
     // Remove trailing comma and space
     $insertQuery = rtrim($insertQuery, ', ');
 
-    $result = pg_query($connection, $insertQuery);
+    $result = pg_query($dbconn, $insertQuery);
 
     if ($result) {
         echo "Data inserted into the PostgreSQL database.";
@@ -38,7 +37,7 @@ if ($data) {
     }
 
     // Close the database connection
-    pg_close($connection);
+    pg_close($dbconn);
 } else {
     echo "No data received.";
 }
