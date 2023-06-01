@@ -1,5 +1,6 @@
 <?php
 $body = file_get_contents("php://input");
+echo $body;
 $data = json_decode($body, true);
 
 if ($data) {
