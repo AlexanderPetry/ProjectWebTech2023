@@ -2,17 +2,34 @@
 <html>
 <head>
     <title>Project Webtech 2023</title>
-    <link rel="stylesheet" href="design.css">
+    <link id="css-theme" rel="stylesheet" href="design_light.css">
     <script>
     function changeContent(contentId) {
         var content = document.getElementById(contentId).innerHTML;
         document.getElementById('dynamicContent').innerHTML = content;
     }
-</script>
+
+    function toggleTheme() {
+        var cssTheme = document.getElementById('css-theme');
+        
+        if (cssTheme.getAttribute('href') === 'design_light.css') {
+            cssTheme.setAttribute('href', 'design_dark.css');
+        } else {
+            cssTheme.setAttribute('href', 'design_light.css');
+        }
+    }
+    </script>
+    <style>
+        #dynamicContent {
+            overflow-y: scroll;
+            max-height: 80vh;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>Project Webtech 2023</h1>
+        <button onclick="toggleTheme()">Toggle Theme</button>
     </header>
     <nav>
         <a onclick="changeContent('content1')">About</a>
@@ -25,19 +42,33 @@
 
     <div id="content1" style="display: none;">
         <h2>About</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</p>
-        <p>Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.</p>
+        <div class="section">
+            <h2 class="section-title">Introduction</h2>
+            <p class="section-description">Welcome to this website created by Alexander Petry. Here, you can explore a fascinating feature: real-time temperature updates from a PynqZ2 board. Powered by cutting-edge technology, this website provides you with an immersive experience to stay informed about the latest temperature readings. Hosted on a Fedora server, you can trust in the reliability and stability of the platform.</p>
+        </div>
+        <div class="section">
+            <h2 class="section-title">How It Works</h2>
+            <p class="section-description">The live temperature display operates seamlessly, employing a streamlined process to ensure accurate and up-to-date information. By leveraging advanced technologies, this website brings you the following benefits:</p>
+            <ul>
+                <li>Temperature data is collected in real-time from the PynqZ2 board, providing instant access to the most current readings.</li>
+                <li>The collected data is securely transmitted to a robust backend powered by PHP, which facilitates efficient data management.</li>
+                <li>A powerful PostgreSQL database stores the temperature data, enabling easy retrieval and analysis.</li>
+                <li>The website's user-friendly interface presents the temperature readings in a visually appealing format, allowing you to effortlessly interpret the information.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2 class="section-title">Conclusion</h2>
+            <p class="section-description">With this website, you have the opportunity to stay connected to the dynamic temperature changes captured by the PynqZ2 board. Experience the convenience of real-time updates and gain valuable insights into temperature patterns. Explore the fascinating world of live temperature monitoring, brought to you by the expertise of Alexander Petry and the advanced technologies powering this website.</p>
+        </div>
     </div>
 
     <div id="content2" style="display: none;">
         <h2>Database</h2>
         <?php include 'Logic.php'; ?>
-
     </div>
 
     <div id="content3" style="display: none;">
-        <h1>Download Button</h1>
+        <h1>Download Data</h1>
 
         <select id="Dropdown" onchange="handleChange()">
           <option value=".csv">CSV</option>
@@ -46,9 +77,10 @@
           <option value=".txt">RAW/TXT</option>
         </select>
 
-
-        <button onclick="downloadData()">Download Data</button>
-        <p id="preview"> data preview </p>
+        <button onclick="downloadData()">Download</button>
+        <div id="preview" class="scrollable-box">
+            <pre><code>data preview</code></pre>
+        </div>
         <script>
             function changeContent(contentId) {
                 var content = document.getElementById(contentId).innerHTML;
@@ -91,8 +123,8 @@
             // Data conversions
             if (filetype == ".csv") {
                 for (let i = 0; i < encodedData.length; i++) {
-                    data = data + encodedData[i].number + ";";
-                    data = data + encodedData[i].bool + ";\n";
+                    data = data + encodedData[i].time + ";";
+                    data = data + encodedData[i].temperature + ";\n";
                 }
             } else if (filetype == ".json") {
                 data = JSON.stringify(encodedData);
@@ -133,7 +165,6 @@
                 URL.revokeObjectURL(url);
             }
         </script>
-
     </div>
    
 </body>

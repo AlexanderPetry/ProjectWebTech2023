@@ -2,20 +2,32 @@
 $body = file_get_contents("php://input");
 
 $data = json_decode($body, true);
-$data = (string) $data['temperature'];
+$temperature = isset($data['temperature']) ? $data['temperature'] : null;
 
-echo "Temperature: ";
-echo $data;
-echo "\n";
+function runPythonScript() {
+    $pythonScript = "/path/to/your/python_script.py";
+    $command = "python3 " . $pythonScript;
 
+    // Execute the Python script
+    exec($command, $output, $returnCode);
 
-if ($data) {
+    // Check the return code to determine if the Python script executed successfully
+    if ($returnCode === 0) {
+        echo "Python script executed successfully.";
+    } else {
+        echo "Failed to execute Python script.";
+    }
+}
+
+if ($temperature) {
+    runPythonScript();
+
     // Set connection parameters
     $host       = "localhost";
     $port       = "5432"; 
     $dbname     = "postgres";
     $user       = "postgres";
-    $password   = "postgres";
+    $password   = "sergtsop";
     $table      = "Temperature";
 
     $dbconn = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$password")
@@ -24,30 +36,22 @@ if ($data) {
     // Get current timestamp
     $time = date('Y-m-d H:i:s');
 
-    echo "Time: ";
-    echo $time;
-    echo "\n";
+    // Validate temperature value (example: numeric between -100 and 100)
+    if (!is_numeric($temperature) || $temperature < -100 || $temperature > 100) {
+        echo "Invalid temperature value.";
+        exit;
+    }
 
+    // Sanitize temperature value
+    $temperature = pg_escape_string($dbconn, $temperature);
 
-    $insertQuery = "INSERT INTO $table (time, temperature) VALUES ('{$time}', '{$data}')";
-    
+    $insertQuery = "INSERT INTO $table (time, temperature) VALUES ($1, $2)";
 
-    echo "insert query: ";
-    echo $insertQuery;
-    echo "\n";
+    // Prepare the statement
+    $stmt = pg_prepare($dbconn, "insert_query", $insertQuery);
 
-    // Remove trailing comma and space
-    $insertQuery = rtrim($insertQuery, ', ');
-
-    echo "insert query: ";
-    echo $insertQuery;
-    echo "\n";
-
-    $result = pg_query($dbconn, $insertQuery);
-
-    echo "result: ";
-    echo $result;
-    echo "\n";
+    // Execute the statement with the data as parameters
+    $result = pg_execute($dbconn, "insert_query", array($time, $temperature));
 
     if ($result) {
         echo "Data inserted into the PostgreSQL database.\n";
