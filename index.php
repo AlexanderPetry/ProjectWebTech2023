@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Project Webtech 2023</title>
-    <link id="css-theme" rel="stylesheet" href="light.css">
+    <link id="css-theme" rel="stylesheet" href="design_light.css">
     <script>
     function changeContent(contentId) {
         var content = document.getElementById(contentId).innerHTML;
@@ -12,10 +12,10 @@
     function toggleTheme() {
             var cssTheme = document.getElementById('css-theme');
             
-            if (cssTheme.getAttribute('href') === 'light.css') {
-                cssTheme.setAttribute('href', 'dark.css');
+            if (cssTheme.getAttribute('href') === 'design_light.css') {
+                cssTheme.setAttribute('href', 'design_dark.css');
             } else {
-                cssTheme.setAttribute('href', 'light.css');
+                cssTheme.setAttribute('href', 'design_light.css');
             }
         }
 </script>
