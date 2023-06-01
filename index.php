@@ -78,7 +78,9 @@
         </select>
 
         <button onclick="downloadData()">Download Data</button>
-        <p id="preview"><pre><code>data preview</code></pre></p>
+        <div id="preview" class="scrollable-box">
+            <pre><code>data preview</code></pre>
+        </div>
         <script>
             function changeContent(contentId) {
                 var content = document.getElementById(contentId).innerHTML;

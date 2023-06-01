@@ -74,24 +74,54 @@ table th, table td {
   text-align: left;
 }
 
-.table-container {
-  max-height: 300px; /* Adjust the height as needed */
-  overflow-y: auto;
-  display: inline-flex;
-  flex-direction: column;
-  border: 1px solid #34eb46;
+..table-container {
+    max-height: 300px; /* Adjust the height as needed */
+    overflow-y: auto;
+    display: inline-flex;
+    flex-direction: column;
+    border: 2px solid #34eb46; /* Neon green border */
+    border-radius: 5px;
 }
 
 #temperature-table {
-  width: 100%;
-  table-layout: fixed;
+    width: 100%;
+    table-layout: fixed;
+}
+
+#temperature-table th,
+#temperature-table td {
+    border: 1px solid #34eb46; /* Neon green border */
+    padding: 5px;
 }
 
 #temperature-table thead th {
-  position: sticky;
-  top: 0;
-  background-color: #1c1c1c;
-  z-index: 1;
+    position: sticky;
+    top: 0;
+    background-color: #1c1c1c;
+    color: #34eb46; /* Neon green text color */
+    z-index: 1;
+}
+
+#temperature-table tbody td {
+    text-align: center;
+    color: #34eb46; /* Neon green text color */
+}
+
+.scrollable-box::-webkit-scrollbar {
+    width: 8px;
+    background-color: #1c1c1c;
+}
+
+.scrollable-box::-webkit-scrollbar-thumb {
+    background-color: #34eb46; /* Neon green scrollbar thumb color */
+}
+
+.scrollable-box::-webkit-scrollbar-track {
+    background-color: #1c1c1c;
+}
+
+.scrollable-box::-webkit-scrollbar-thumb:hover {
+    background-color: #2bc83b; /* Darker neon green on hover */
 }
 
 .section {
@@ -125,4 +155,12 @@ ul {
 
 ul li {
   margin-bottom: 10px;
+}
+
+.scrollable-box {
+    max-height: 200px;
+    overflow: auto;
+    background-color: #f5f5f5;
+    padding: 10px;
+    margin-top: 10px;
 }
