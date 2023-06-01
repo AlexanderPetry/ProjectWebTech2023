@@ -68,7 +68,7 @@
     </div>
 
     <div id="content3" style="display: none;">
-        <h1>Download Button</h1>
+        <h1>Download Data</h1>
 
         <select id="Dropdown" onchange="handleChange()">
           <option value=".csv">CSV</option>
@@ -77,7 +77,7 @@
           <option value=".txt">RAW/TXT</option>
         </select>
 
-        <button onclick="downloadData()">Download Data</button>
+        <button onclick="downloadData()">Download</button>
         <div id="preview" class="scrollable-box">
             <pre><code>data preview</code></pre>
         </div>
