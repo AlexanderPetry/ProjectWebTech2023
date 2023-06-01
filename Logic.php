@@ -13,7 +13,7 @@
     $dbconn = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$password")
         or die('Could not connect: ' . pg_last_error());
 
-    $query = "SELECT * FROM test";
+    $query = "SELECT * FROM $table";
     $result = pg_query_params($dbconn, $query, array()) or die('Query failed: ' . pg_last_error());
 
     $data = pg_fetch_all($result);
