@@ -2,17 +2,28 @@
 <html>
 <head>
     <title>Project Webtech 2023</title>
-    <link rel="stylesheet" href="design.css">
+    <link id="css-theme" rel="stylesheet" href="light.css">
     <script>
     function changeContent(contentId) {
         var content = document.getElementById(contentId).innerHTML;
         document.getElementById('dynamicContent').innerHTML = content;
     }
+
+    function toggleTheme() {
+            var cssTheme = document.getElementById('css-theme');
+            
+            if (cssTheme.getAttribute('href') === 'light.css') {
+                cssTheme.setAttribute('href', 'dark.css');
+            } else {
+                cssTheme.setAttribute('href', 'light.css');
+            }
+        }
 </script>
 </head>
 <body>
     <header>
         <h1>Project Webtech 2023</h1>
+        <button onclick="toggleTheme()">Toggle Theme</button>
     </header>
     <nav>
         <a onclick="changeContent('content1')">About</a>

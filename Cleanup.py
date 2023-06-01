@@ -9,8 +9,8 @@ user = 'postgres'
 password = 'postgres'
 table = 'Temperature'
 
-row_limit = 1000  # Define the row limit for the table
-delete_batch_size = 100  # Number of rows to delete in each batch
+row_limit = 50  # Define the row limit for the table
+delete_batch_size = 5  # Number of rows to delete in each batch
 
 # Connect to the database
 conn = psycopg2.connect(host=host, port=port, dbname=dbname, user=user, password=password)
