@@ -68,8 +68,22 @@ table th, table td {
 }
 
 .table-container {
-  max-height: 500px; /* Adjust the height as needed */
+  max-height: 300px; /* Adjust the height as needed */
   overflow-y: auto;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+#temperature-table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+#temperature-table thead th {
+  position: sticky;
+  top: 0;
+  background-color: #f5f5f5;
+  z-index: 1;
 }
 
 .section {

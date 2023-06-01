@@ -20,10 +20,14 @@
 
     echo "<div class='table-container'>";
     echo "<table id='temperature-table' style='margin: 0 auto; border-collapse: collapse;'>";
-    echo "<tr><th style='border: 1px solid #FFFFFF; padding: 5px;'>time</th><th style='border: 1px solid #FFFFFF; padding: 5px;'>temperature</th></tr>";
+    echo "<thead>";
+    echo "<tr><th style='border: 1px solid #FFFFFF; padding: 5px;'>Time</th><th style='border: 1px solid #FFFFFF; padding: 5px;'>Temperature</th></tr>";
+    echo "</thead>";
+    echo "<tbody>";
     foreach ($data as $row) {
         echo "<tr><td style='border: 1px solid #FFFFFF; padding: 5px; text-align: center;'>".$row['time']."</td><td style='border: 1px solid #FFFFFF; padding: 5px; text-align: center;'>".$row['temperature']."</td></tr>";
     }
+    echo "</tbody>";
     echo "</table>";
     echo "</div>";
 
