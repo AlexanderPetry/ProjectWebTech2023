@@ -8,7 +8,7 @@
     $dbname     = "postgres";
     $user       = "postgres";
     $password   = "postgres";
-    $table      = "test";
+    $table      = "temperature";
 
     $dbconn = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$password")
         or die('Could not connect: ' . pg_last_error());
@@ -19,9 +19,9 @@
     $data = pg_fetch_all($result);
 
     echo "<table style='margin: 0 auto; border-collapse: collapse;'>";
-    echo "<tr><th style='border: 1px solid black; padding: 5px;'>number</th><th style='border: 1px solid black; padding: 5px;'>bool</th></tr>";
+    echo "<tr><th style='border: 1px solid #34eb46; padding: 5px;'>number</th><th style='border: 1px solid #34eb46; padding: 5px;'>bool</th></tr>";
     foreach ($data as $row) {
-        echo "<tr><td style='border: 1px solid black; padding: 5px; text-align: center;'>".$row['number']."</td><td style='border: 1px solid black; padding: 5px; text-align: center;'>".$row['bool']."</td></tr>";
+        echo "<tr><td style='border: 1px solid #34eb46; padding: 5px; text-align: center;'>".$row['number']."</td><td style='border: 1px solid #34eb46; padding: 5px; text-align: center;'>".$row['bool']."</td></tr>";
     }
     echo "</table>";
 
