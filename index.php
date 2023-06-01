@@ -3,6 +3,12 @@
 <head>
     <title>Project Webtech 2023</title>
     <link rel="stylesheet" href="design.css">
+    <script>
+    function changeContent(contentId) {
+        var content = document.getElementById(contentId).innerHTML;
+        document.getElementById('dynamicContent').innerHTML = content;
+    }
+</script>
 </head>
 <body>
     <header>
