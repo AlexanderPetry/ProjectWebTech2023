@@ -10,15 +10,21 @@
     }
 
     function toggleTheme() {
-            var cssTheme = document.getElementById('css-theme');
-            
-            if (cssTheme.getAttribute('href') === 'design_light.css') {
-                cssTheme.setAttribute('href', 'design_dark.css');
-            } else {
-                cssTheme.setAttribute('href', 'design_light.css');
-            }
+        var cssTheme = document.getElementById('css-theme');
+        
+        if (cssTheme.getAttribute('href') === 'design_light.css') {
+            cssTheme.setAttribute('href', 'design_dark.css');
+        } else {
+            cssTheme.setAttribute('href', 'design_light.css');
         }
-</script>
+    }
+    </script>
+    <style>
+        #dynamicContent {
+            overflow-y: scroll;
+            max-height: 80vh;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -59,7 +65,6 @@
     <div id="content2" style="display: none;">
         <h2>Database</h2>
         <?php include 'Logic.php'; ?>
-
     </div>
 
     <div id="content3" style="display: none;">
@@ -71,7 +76,6 @@
           <option value=".xml">XML</option>
           <option value=".txt">RAW/TXT</option>
         </select>
-
 
         <button onclick="downloadData()">Download Data</button>
         <p id="preview"> data preview </p>
@@ -159,7 +163,6 @@
                 URL.revokeObjectURL(url);
             }
         </script>
-
     </div>
    
 </body>
