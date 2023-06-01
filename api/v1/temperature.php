@@ -28,15 +28,9 @@ if ($data) {
     echo $time;
     echo "\n";
 
-    foreach ($data as $item) {
-        $temperature = $item['temperature'];
 
-        echo "insert query: ";
-        echo $temperature;
-        echo "\n";
-
-        $insertQuery = "INSERT INTO $table ($time, $data) VALUES ";
-    }
+    $insertQuery = "INSERT INTO $table ($time, $data) VALUES ";
+    
 
     echo "insert query: ";
     echo $insertQuery;
