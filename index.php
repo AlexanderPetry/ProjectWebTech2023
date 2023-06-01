@@ -129,27 +129,6 @@
         </script>
 
     </div>
-    <div>
-      <p id="anim">1</p>
-      <script>
-        setInterval(move, 10);
-        var i = 0;
-        box.style.top = "0px";
-        function Move() {
-          var elem = document.getElementById('anim');
-          if(box.style.top == '500px'){
-            box.style.top == '0x';
-            i = 0;
-          }
-          else{
-            i++;
-            box.style.top = i + "px";
-          }
-        }
-
-      </script>
-
-    </div>
    
 </body>
 </html>
