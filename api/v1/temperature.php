@@ -8,8 +8,23 @@ echo "Temperature: ";
 echo $data;
 echo "\n";
 
+function runPythonScript() {
+    $pythonScript = "/path/to/your/python_script.py";
+    $command = "python3 " . $pythonScript;
+
+    // Execute the Python script
+    exec($command, $output, $returnCode);
+
+    // Check the return code to determine if the Python script executed successfully
+    if ($returnCode === 0) {
+        echo "Python script executed successfully.";
+    } else {
+        echo "Failed to execute Python script.";
+    }
+}
 
 if ($data) {
+    runPythonScript();
     // Set connection parameters
     $host       = "localhost";
     $port       = "5432"; 
