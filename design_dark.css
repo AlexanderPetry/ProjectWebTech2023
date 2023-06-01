@@ -8,14 +8,14 @@ body {
 }
 
 header {
-  background-color: #1c1c1c; /* Dark gray background color */
+  background-color: black; /* Dark gray background color */
   padding: 20px;
   text-align: center;
   color: #34eb46; /* Neon green text color */
 }
 
 nav {
-  background-color: black;
+  background-color: #1c1c1c;
   padding: 20px;
   text-align: center;
   color: #34eb46; /* Neon green text color */

@@ -6,7 +6,7 @@ host = 'localhost'
 port = '5432'
 dbname = 'postgres'
 user = 'postgres'
-password = 'postgres'
+password = 'sergtsop'
 table = 'Temperature'
 
 row_limit = 50  # Define the row limit for the table
