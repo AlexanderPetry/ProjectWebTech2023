@@ -29,7 +29,7 @@ if ($data) {
     echo "\n";
 
 
-    $insertQuery = "INSERT INTO $table ($time, $data) VALUES ";
+    $insertQuery = "INSERT INTO $table ('$time', '$data') VALUES ";
     
 
     echo "insert query: ";
