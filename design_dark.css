@@ -71,7 +71,7 @@ table {
 table th, table td {
   border: 1px solid #34eb46; /* Neon green border */
   padding: 8px;
-  text-align: left;
+  text-align: center;
 }
 
 .table-container {
@@ -89,13 +89,14 @@ table th, table td {
     text-align: center;
 }
 
+
 #temperature-table th,
 #temperature-table td {
-    border: 1px solid #34eb46; /* Neon green border */
+    border: 1px solid #34eb46; /* Neon gray border */
     padding: 5px;
-    color: #34eb46; /* Neon green text color */
-    text-align: center;
+    text-align: center; /* Set text alignment to center */
 }
+
 
 #temperature-table thead th {
     position: sticky;
