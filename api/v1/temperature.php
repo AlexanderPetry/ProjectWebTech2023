@@ -29,7 +29,7 @@ if ($data) {
     echo "\n";
 
     // Prepare and execute the SQL statement to insert the data
-    $insertQuery = "INSERT INTO $table ($time, $temperature) VALUES ";
+    $insertQuery = "INSERT INTO $table (time, temperature) VALUES ";
 
     echo "insert query: ";
     echo $insertQuery;
@@ -41,10 +41,22 @@ if ($data) {
         $insertQuery .= "('$time', '$temperature'), ";
     }
 
+    echo "insert query: ";
+    echo $insertQuery;
+    echo "\n";
+
     // Remove trailing comma and space
     $insertQuery = rtrim($insertQuery, ', ');
 
+    echo "insert query: ";
+    echo $insertQuery;
+    echo "\n";
+
     $result = pg_query($dbconn, $insertQuery);
+
+    echo "result: ";
+    echo $result;
+    echo "\n";
 
     if ($result) {
         echo "Data inserted into the PostgreSQL database.\n";
