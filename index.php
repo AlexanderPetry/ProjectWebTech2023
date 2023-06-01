@@ -36,9 +36,26 @@
 
     <div id="content1" style="display: none;">
         <h2>About</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</p>
-        <p>Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.</p>
+        <div class="section">
+            <h2 class="section-title">Introduction</h2>
+            <p class="section-description">This website is created by Alexander Petry. It provides live temperature updates from a PynqZ2 board. The website is hosted on a server running Fedora.</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">How It Works</h2>
+            <p class="section-description">The live temperature display operates as follows:</p>
+            <ol>
+                <li><span class="highlight">Step 1:</span> The PynqZ2 board sends temperature data to a PHP script.</li>
+                <li><span class="highlight">Step 2:</span> The PHP script stores the data in a PostgreSQL database.</li>
+                <li><span class="highlight">Step 3:</span> The stored data can be retrieved and displayed or downloaded.</li>
+                <li><span class="highlight">Step 4:</span> The database has a limit of 50 items. When it reaches its capacity, the oldest data is automatically deleted.</li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Conclusion</h2>
+            <p class="section-description">With this setup, you can monitor the live temperature readings from the PynqZ2 board conveniently. The website ensures up-to-date information and maintains a database with a manageable size.</p>
+        </div>
     </div>
 
     <div id="content2" style="display: none;">

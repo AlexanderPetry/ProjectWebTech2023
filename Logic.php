@@ -20,7 +20,7 @@
 
     echo "<div class='table-container'>";
     echo "<table style='margin: 0 auto; border-collapse: collapse;'>";
-    echo "<tr><th style='border: 1px solid #FFFFFF; padding: 5px;'>number</th><th style='border: 1px solid #FFFFFF; padding: 5px;'>bool</th></tr>";
+    echo "<tr><th style='border: 1px solid #FFFFFF; padding: 5px;'>time</th><th style='border: 1px solid #FFFFFF; padding: 5px;'>temperature</th></tr>";
     foreach ($data as $row) {
         echo "<tr><td style='border: 1px solid #FFFFFF; padding: 5px; text-align: center;'>".$row['time']."</td><td style='border: 1px solid #FFFFFF; padding: 5px; text-align: center;'>".$row['temperature']."</td></tr>";
     }
@@ -31,7 +31,14 @@
 ?>
 
 <script>
-    setTimeout(function() {
-        location.reload();
-    }, 30000); // Refresh the page every 1 minute (60,000 milliseconds)
+    setInterval(function() {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("temperature-table").innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("GET", "refresh_table.php", true);
+        xmlhttp.send();
+    }, 60000); // Refresh the table content every 1 minute (60,000 milliseconds)
 </script>

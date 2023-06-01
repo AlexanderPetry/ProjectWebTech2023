@@ -64,10 +64,10 @@ button:hover {
 }
 
 table th, table td {
-  border-color: #FFFFFF; /* Replace with your desired border color */
+  border-color: #000000; /* Replace with your desired border color */
 }
 
 .table-container {
-  max-height: 300px; /* Adjust the height as needed */
+  max-height: 500px; /* Adjust the height as needed */
   overflow-y: auto;
 }
