@@ -38,23 +38,21 @@
         <h2>About</h2>
         <div class="section">
             <h2 class="section-title">Introduction</h2>
-            <p class="section-description">This website is created by Alexander Petry. It provides live temperature updates from a PynqZ2 board. The website is hosted on a server running Fedora.</p>
+            <p class="section-description">Welcome to this website created by Alexander Petry. Here, you can explore a fascinating feature: real-time temperature updates from a PynqZ2 board. Powered by cutting-edge technology, this website provides you with an immersive experience to stay informed about the latest temperature readings. Hosted on a Fedora server, you can trust in the reliability and stability of the platform.</p>
         </div>
-
         <div class="section">
             <h2 class="section-title">How It Works</h2>
-            <p class="section-description">The live temperature display operates as follows:</p>
-            <ol>
-                <li><span class="highlight">Step 1:</span> The PynqZ2 board sends temperature data to a PHP script.</li>
-                <li><span class="highlight">Step 2:</span> The PHP script stores the data in a PostgreSQL database.</li>
-                <li><span class="highlight">Step 3:</span> The stored data can be retrieved and displayed or downloaded.</li>
-                <li><span class="highlight">Step 4:</span> The database has a limit of 50 items. When it reaches its capacity, the oldest data is automatically deleted.</li>
-            </ol>
+            <p class="section-description">The live temperature display operates seamlessly, employing a streamlined process to ensure accurate and up-to-date information. By leveraging advanced technologies, this website brings you the following benefits:</p>
+            <ul>
+                <li>Temperature data is collected in real-time from the PynqZ2 board, providing instant access to the most current readings.</li>
+                <li>The collected data is securely transmitted to a robust backend powered by PHP, which facilitates efficient data management.</li>
+                <li>A powerful PostgreSQL database stores the temperature data, enabling easy retrieval and analysis.</li>
+                <li>The website's user-friendly interface presents the temperature readings in a visually appealing format, allowing you to effortlessly interpret the information.</li>
+            </ul>
         </div>
-
         <div class="section">
             <h2 class="section-title">Conclusion</h2>
-            <p class="section-description">With this setup, you can monitor the live temperature readings from the PynqZ2 board conveniently. The website ensures up-to-date information and maintains a database with a manageable size.</p>
+            <p class="section-description">With this website, you have the opportunity to stay connected to the dynamic temperature changes captured by the PynqZ2 board. Experience the convenience of real-time updates and gain valuable insights into temperature patterns. Explore the fascinating world of live temperature monitoring, brought to you by the expertise of Alexander Petry and the advanced technologies powering this website.</p>
         </div>
     </div>
 

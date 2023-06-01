@@ -38,7 +38,7 @@
                 document.getElementById("temperature-table").innerHTML = this.responseText;
             }
         };
-        xmlhttp.open("GET", "refresh_table.php", true);
+        xmlhttp.open("GET", "Logic.php", true);
         xmlhttp.send();
     }, 60000); // Refresh the table content every 1 minute (60,000 milliseconds)
 </script>
