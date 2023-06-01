@@ -1,10 +1,19 @@
 <?php
 $body = file_get_contents("php://input");
+
 echo $body;
+echo "\n";
+
 $data = json_decode($body, true);
 
+echo $data;
+echo "\n";
+
+$temperature = (string) $data['temperature'];
+echo $temperature;
+echo "\n";
+
 if ($data) {
-    echo $data;
     // Set connection parameters
     $host       = "localhost";
     $port       = "5432"; 
