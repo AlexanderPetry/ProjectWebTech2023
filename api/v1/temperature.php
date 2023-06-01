@@ -3,6 +3,7 @@ $body = file_get_contents("php://input");
 $data = json_decode($body, true);
 
 if ($data) {
+    echo $data;
     // Set connection parameters
     $host       = "localhost";
     $port       = "5432"; 
@@ -31,9 +32,9 @@ if ($data) {
     $result = pg_query($dbconn, $insertQuery);
 
     if ($result) {
-        echo "Data inserted into the PostgreSQL database.";
+        echo "Data inserted into the PostgreSQL database.\n";
     } else {
-        echo "Failed to insert data into the PostgreSQL database.";
+        echo "Failed to insert data into the PostgreSQL database.\n";
     }
 
     // Close the database connection
