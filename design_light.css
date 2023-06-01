@@ -62,3 +62,12 @@ button {
 button:hover {
   background-color: #d3d3d3; /* Darker gray on hover */
 }
+
+table th, table td {
+  border-color: #FFFFFF; /* Replace with your desired border color */
+}
+
+.table-container {
+  max-height: 300px; /* Adjust the height as needed */
+  overflow-y: auto;
+}

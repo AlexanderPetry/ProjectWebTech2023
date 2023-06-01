@@ -18,12 +18,14 @@
 
     $data = pg_fetch_all($result);
 
+    echo "<div class='table-container'>";
     echo "<table style='margin: 0 auto; border-collapse: collapse;'>";
-    echo "<tr><th style='border: 1px solid #34eb46; padding: 5px;'>number</th><th style='border: 1px solid #34eb46; padding: 5px;'>bool</th></tr>";
+    echo "<tr><th style='border: 1px solid #FFFFFF; padding: 5px;'>number</th><th style='border: 1px solid #FFFFFF; padding: 5px;'>bool</th></tr>";
     foreach ($data as $row) {
-        echo "<tr><td style='border: 1px solid #34eb46; padding: 5px; text-align: center;'>".$row['time']."</td><td style='border: 1px solid #34eb46; padding: 5px; text-align: center;'>".$row['temperature']."</td></tr>";
+        echo "<tr><td style='border: 1px solid #FFFFFF; padding: 5px; text-align: center;'>".$row['time']."</td><td style='border: 1px solid #FFFFFF; padding: 5px; text-align: center;'>".$row['temperature']."</td></tr>";
     }
     echo "</table>";
+    echo "</div>";
 
     $encodedData = json_encode($data);
 ?>

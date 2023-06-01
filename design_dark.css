@@ -63,3 +63,11 @@ button:hover {
   background-color: #2bc83b; /* Darker neon green on hover */
 }
 
+table th, table td {
+  border-color: #34eb46; /* Replace with your desired border color */
+}
+
+.table-container {
+  max-height: 300px; /* Adjust the height as needed */
+  overflow-y: auto;
+}
