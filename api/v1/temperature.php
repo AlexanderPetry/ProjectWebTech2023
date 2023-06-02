@@ -4,6 +4,10 @@ $body = file_get_contents("php://input");
 $data = json_decode($body, true);
 $temperature = isset($data['temperature']) ? $data['temperature'] : null;
 
+echo "Data: "; 
+echo $data;
+echo "\n";
+
 function runPythonScript() {
     $pythonScript = "/path/to/your/python_script.py";
     $command = "python3 " . $pythonScript;
